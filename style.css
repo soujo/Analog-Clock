@@ -1,0 +1,119 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    margin-right: 2.8rem;
+    align-items: center;
+    min-height: 100vh;
+    background: url("./img/background_img.jpg") no-repeat ;
+    background-size: 100% 100%;
+}
+
+
+.clock{
+    position: relative;    
+    margin-top: 3rem;
+    margin-left: 3rem;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    border: 12px solid rgb(163, 163, 163);
+    background:white;
+    
+}
+
+.inner_black_border{
+    position: absolute;
+    height: 375px;
+    width: 375px;
+    border-radius: 50%;
+    border: 5px solid rgb(105, 105, 105);
+}
+.clock .numbers{
+    --rotation:0;
+    color: black;
+    font-size: 30px;
+    font-weight:bolder;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    
+}
+.clock .number_1{--rotation:30deg;}
+.clock .number_2{--rotation:60deg;}
+.clock .number_3{--rotation:90deg;}
+.clock .number_4{--rotation:120deg;}
+.clock .number_5{--rotation:150deg;}
+.clock .number_6{--rotation:180deg;}
+.clock .number_7{--rotation:210deg;}
+.clock .number_8{--rotation:240deg;}
+.clock .number_9{--rotation:270deg;}
+.clock .number_10{--rotation:300deg;}
+.clock .number_11{--rotation:330deg;}
+.clock .number_12{--rotation:360deg;}
+
+.hand{
+    --rotation:0;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    height: 45%;
+    z-index: 10;
+    width: 7px;
+    border: 1px solid black;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    transform-origin: bottom;
+    transform:translateX(-50%) rotate(calc(var(--rotation)*1deg));
+}
+.hour{
+    height: 45%;
+    width: 7px;
+    background-color: rgb(192, 192, 192);
+    background-color: black;
+}
+.minute{
+    height: 30%;
+    width: 5px;
+    background-color: rgb(223, 223, 223);
+    background-color: black;
+
+
+}
+.seconds{
+    height: 40%;
+    width: 3px;
+    background-color: rgb(255, 94, 0);
+}
+
+.clock::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid black;    
+    transform: translate(-50%,-50%);
+    z-index: 11;
+
+}
+.clock::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+}
